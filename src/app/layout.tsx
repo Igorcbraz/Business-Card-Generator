@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next'
 
 import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 
-import "./globals.css";
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Gerador de Cartão de Visita",
-  description: "Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.",
-};
+  title: 'Gerador de Cartão de Visita',
+  description: 'Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.',
+}
 
 export default function RootLayout({
   children,
@@ -17,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <Header/>
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <Header/>
+          {children}
+          <Footer/>
+        </div>
       </body>
     </html>
-  );
+  )
 }

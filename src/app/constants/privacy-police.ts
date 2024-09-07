@@ -1,0 +1,1 @@
+export const privacyPolice = 'https://legal.rdstation.com/pt/privacy-policy/'
