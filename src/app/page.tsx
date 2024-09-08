@@ -1,8 +1,26 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import { UserRegisterForm } from '@/components/UserRegisterForm'
 
 import LandingIllustration from '@/assets/landingpage-illustration.png'
+
+export const metadata: Metadata = {
+  title: 'Home | Gerador de Cartão de Visita',
+  description: 'Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Home | Gerador de Cartão de Visita',
+    description: 'Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Home | Gerador de Cartão de Visita',
+    description: 'Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.',
+  },
+}
 
 export default function Home() {
   return (

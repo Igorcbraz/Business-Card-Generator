@@ -121,7 +121,7 @@ export function UserRegisterForm () {
         type="submit"
         variant='highlight'
         showShadow
-        className="flex justify-center items-center gap-2 col-span-2 text-primary-900"
+        className="flex justify-center items-center gap-2 col-span-2 text-primary-900 font-extrabold"
       >
         Gerar CARTÃO Grátis
         <Image

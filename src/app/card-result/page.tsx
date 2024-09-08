@@ -1,4 +1,7 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Suspense } from 'react'
 
 import { freeTrial } from '@/constants/free-trial'
 
@@ -9,7 +12,23 @@ import ArrowIcon from '@/assets/arrow.svg'
 import LandingIllustration from '@/assets/landingpage-illustration.png'
 import ArrowRightWhite from '@/assets/arrow-right-white.svg'
 import DownloadIcon from '@/assets/download.svg'
-import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Cartão de Visita | Resultado',
+  description: 'Confira o resultado do seu cartão de visita e faça o download para utilizá-lo em seus canais digitais.',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Cartão de Visita | Resultado',
+    description: 'Confira o resultado do seu cartão de visita e faça o download para utilizá-lo em seus canais digitais.',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cartão de Visita | Resultado',
+    description: 'Confira o resultado do seu cartão de visita e faça o download para utilizá-lo em seus canais digitais.',
+  },
+}
 
 export default function CardResultPage() {
   return (
@@ -30,7 +49,9 @@ export default function CardResultPage() {
             Gerar outro cartão
           </p>
         </Link>
-        <BusinessCard />
+        <Suspense fallback={<div>Loading...</div>}>
+          <BusinessCard />
+        </Suspense>
         <Button
           type="button"
           variant='highlight'
