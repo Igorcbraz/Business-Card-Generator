@@ -6,8 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import InputMask from 'react-input-mask'
 import { useRouter } from 'next/navigation'
 
-import { privacyPolice } from '@/constants/privacy-police'
 import { Button } from '@/components/Button'
+import { InputField } from '@/components/Input/index'
+import { privacyPolice } from '@/constants/privacy-police'
 import { cn } from '@/utils/cn'
 import { registerUserFormSchema, RegisterUserFormData } from '@/schemas/UserRegister'
 
@@ -46,24 +47,18 @@ export function UserRegisterForm () {
 
   return (
     <form className="grid grid-cols-2 gap-5 max-w-[500px]" onSubmit={handleSubmit(handleRegisterUser)}>
-      <div className="col-span-2">
-        <label htmlFor="name" className="block text-subtitle-xs font-bold mb-2">Nome*</label>
-        <input
-          {...register('name', { required: true })}
-          name='name'
-          type="text"
-          id="name"
-          className={cn('input-default w-full', { 'border-red-500': errors?.name })}
-          placeholder="Nome"
-          aria-invalid={errors?.name ? 'true' : 'false'}
-          aria-describedby={errors?.name ? 'name-error' : undefined}
-        />
-        {errors?.name && (
-          <p className="error-message" id='name-error' role="alert">
-            {errors?.name?.message}
-          </p>
-        )}
-      </div>
+      <InputField
+        label="Nome"
+        name="name"
+        type="text"
+        id="name"
+        placeholder="Nome"
+        className='w-full'
+        containerClassName='col-span-2'
+        register={register}
+        errors={errors}
+        options={{ required: true }}
+      />
       <div className="col-span-2 sm:col-span-1">
         <label htmlFor="phone" className="block text-subtitle-xs font-bold mb-2">Telefone*</label>
         <InputMask
@@ -84,24 +79,18 @@ export function UserRegisterForm () {
           </p>
         )}
       </div>
-      <div className="col-span-2 sm:col-span-1">
-        <label htmlFor="email" className="block text-subtitle-xs font-bold mb-2">E-mail*</label>
-        <input
-          {...register('email', { required: true })}
-          name='email'
-          type="email"
-          id="email"
-          className={cn('input-default w-full', { 'border-red-500': errors?.email })}
-          placeholder="nome@email.com"
-          aria-invalid={errors?.email ? 'true' : 'false'}
-          aria-describedby={errors?.email ? 'email-error' : undefined}
-        />
-        {errors?.email && (
-          <p className="error-message" id='email-error' role="alert">
-            {errors?.email?.message}
-          </p>
-        )}
-      </div>
+      <InputField
+        label="E-mail"
+        name='email'
+        type="email"
+        id="email"
+        placeholder="nome@email.com"
+        className='w-full'
+        containerClassName='col-span-2 sm:col-span-1'
+        register={register}
+        errors={errors}
+        options={{ required: true }}
+      />
       <div className="col-span-2 text-caption text-gray-300">
         <ul className="list-disc list-inside">
           <li>
