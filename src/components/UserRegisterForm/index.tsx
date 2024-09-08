@@ -3,22 +3,15 @@
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import * as zod from 'zod'
 import InputMask from 'react-input-mask'
 import { useRouter } from 'next/navigation'
 
-import ArrowRight from '@/assets/arrow-right.svg'
 import { privacyPolice } from '@/constants/privacy-police'
 import { Button } from '@/components/Button'
 import { cn } from '@/utils/cn'
+import { registerUserFormSchema, RegisterUserFormData } from '@/schemas/UserRegister'
 
-const registerUserFormSchema = zod.object({
-  name: zod.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres' }).min(1, { message: 'O nome é obrigatório' }),
-  phone: zod.string().regex(/^\(\d{2}\) \d{4,5}-\d{4}$/, { message: 'O telefone deve estar no formato (99) 9999-9999 ou (99) 99999-9999' }).min(1, { message: 'O telefone é obrigatório' }),
-  email: zod.string().email({ message: 'O email deve ser um endereço de email válido' }).min(1, { message: 'O email é obrigatório' }),
-})
-
-type RegisterUserFormData = zod.infer<typeof registerUserFormSchema>
+import ArrowRight from '@/assets/arrow-right.svg'
 
 export function UserRegisterForm () {
   const {

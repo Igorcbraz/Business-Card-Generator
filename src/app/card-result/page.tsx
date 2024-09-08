@@ -3,12 +3,13 @@ import Image from 'next/image'
 import { freeTrial } from '@/constants/free-trial'
 
 import { Button } from '@/components/Button'
+import { BusinessCard } from '@/components/BusinessCard'
 
 import ArrowIcon from '@/assets/arrow.svg'
 import LandingIllustration from '@/assets/landingpage-illustration.png'
-import Logo from '@/assets/symbol.svg'
-import DownloadIcon from '@/assets/download.svg'
 import ArrowRightWhite from '@/assets/arrow-right-white.svg'
+import DownloadIcon from '@/assets/download.svg'
+import Link from 'next/link'
 
 export default function CardResultPage() {
   return (
@@ -19,7 +20,7 @@ export default function CardResultPage() {
         className="hidden lg:block lg:w-[28rem] xl:w-[32rem]"
       />
       <section className='flex flex-col justify-between items-start gap-5 w-full sm:w-[600px] lg:w-[510px]'>
-        <div className='flex items-center justify-between gap-4'>
+        <Link href='/' className='flex items-center justify-between gap-4'>
           <Image
             src={ArrowIcon}
             alt="Seta indicando para baixo"
@@ -28,20 +29,8 @@ export default function CardResultPage() {
           <p className='text-subtitle-sm'>
             Gerar outro cartão
           </p>
-        </div>
-        <div className='flex flex-row justify-center items-center bg-white rounded-3xl p-5 h-[160px] sm:h-[260px] w-full'>
-          <Image
-            src={Logo}
-            alt="Logo da empresa"
-            className='w-[45px] h-[38px] sm:w-[70px] sm:h-[60px]'
-          />
-          <div className='w-[3px] h-full bg-primary-800 mx-5'></div>
-          <div className='flex flex-col gap-6 text-black text-subtitle-xs sm:text-subtitle-sm'>
-            <p>{'Nome e Sobrenome'}</p>
-            <p>{'(00) 0000-0000'}</p>
-            <p>{'meuemail@email.com'}</p>
-          </div>
-        </div>
+        </Link>
+        <BusinessCard />
         <Button
           type="button"
           variant='highlight'
