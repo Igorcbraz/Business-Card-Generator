@@ -9,6 +9,7 @@ export function Footer () {
           className="underline font-bold" 
           target="_blank" 
           rel="noopener noreferrer"
+          aria-label='Abrir política de privacidade em uma nova aba'
         >
           Política de privacidade
         </a>

@@ -39,7 +39,11 @@ export default function CardResultPage() {
         className="hidden lg:block lg:w-[28rem] xl:w-[32rem]"
       />
       <section className='flex flex-col justify-between items-start gap-5 w-full sm:w-[600px] lg:w-[510px]'>
-        <Link href='/' className='flex items-center justify-between gap-4'>
+        <Link
+          href='/'
+          className='flex items-center justify-between gap-4'
+          aria-label='Voltar para página inicial e gerar outro cartão de visita'
+        >
           <Image
             src={ArrowIcon}
             alt="Seta indicando para baixo"
@@ -58,6 +62,7 @@ export default function CardResultPage() {
           showShadow
           disabled
           className='w-full flex justify-center items-center gap-3'
+          aria-label='Baixar cartão de visita personalizado'
         >
           <Image
             src={DownloadIcon}
@@ -72,6 +77,7 @@ export default function CardResultPage() {
           target="_blank" 
           rel="noopener noreferrer"
           className='self-center text-center w-[72%] sm:w-full flex justify-center items-center gap-0 sm:gap-3 text-primary-800 font-bold uppercase text-caption sm:text-body-md'
+          aria-label='Fazer um teste grátis do RD Station Marketing em uma nova aba'
         >
           Fazer um teste grátis do RD Station Marketing
           <Image

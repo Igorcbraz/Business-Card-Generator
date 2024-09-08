@@ -66,7 +66,7 @@ const config: Config = {
         '.input-default': {
           '@apply px-3 py-2 border bg-white focus:outline-none focus:ring focus:ring-primary-400 transition-shadow duration-300 text-gray-700 placeholder-gray-700': {},
         },
-        '.errror-message': {
+        '.error-message': {
           '@apply text-gray-300 text-sm': {},
         }
       })

@@ -55,9 +55,11 @@ export function UserRegisterForm () {
           id="name"
           className={cn('input-default w-full', { 'border-red-500': errors?.name })}
           placeholder="Nome"
+          aria-invalid={errors?.name ? 'true' : 'false'}
+          aria-describedby={errors?.name ? 'name-error' : undefined}
         />
         {errors?.name && (
-          <p className="errror-message">
+          <p className="error-message" id='name-error' role="alert">
             {errors?.name?.message}
           </p>
         )}
@@ -73,9 +75,11 @@ export function UserRegisterForm () {
           type={'text'}
           className={cn('input-default w-full', { 'border-red-500': errors?.phone })}
           placeholder="(00) 0 0000-0000"
+          aria-invalid={errors?.phone ? 'true' : 'false'}
+          aria-describedby={errors?.email ? 'message-error' : undefined}
         />
         {errors?.phone && (
-          <p className="errror-message">
+          <p className="error-message" id='message-error' role="alert">
             {errors?.phone?.message}
           </p>
         )}
@@ -89,9 +93,11 @@ export function UserRegisterForm () {
           id="email"
           className={cn('input-default w-full', { 'border-red-500': errors?.email })}
           placeholder="nome@email.com"
+          aria-invalid={errors?.email ? 'true' : 'false'}
+          aria-describedby={errors?.email ? 'email-error' : undefined}
         />
         {errors?.email && (
-          <p className="errror-message">
+          <p className="error-message" id='email-error' role="alert">
             {errors?.email?.message}
           </p>
         )}
@@ -108,6 +114,7 @@ export function UserRegisterForm () {
               className="underline ml-1" 
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label='Abrir política de privacidade em uma nova aba'
             >
               Política de privacidade
             </a>
@@ -122,6 +129,7 @@ export function UserRegisterForm () {
         variant='highlight'
         showShadow
         className="flex justify-center items-center gap-2 col-span-2 text-primary-900 font-extrabold"
+        aria-label="Registrar dados do formulário para gerar o cartão personalizado"
       >
         Gerar CARTÃO Grátis
         <Image
