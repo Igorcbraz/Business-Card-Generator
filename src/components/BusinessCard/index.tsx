@@ -20,9 +20,9 @@ export function BusinessCard() {
       />
       <div className='w-[3px] h-full bg-primary-800 mx-5'></div>
       <div className='flex flex-col gap-6 text-black text-subtitle-xs sm:text-subtitle-sm'>
-        <p>{ name  || 'Nome e Sobrenome'}</p>
-        <p>{ phone || '(00) 0000-0000'}</p>
-        <p> {email || 'meuemail@email.com'}</p>
+        <p className="truncate max-w-[15ch] sm:max-w-[25ch]">{name || 'Nome e Sobrenome'}</p>
+        <p>{phone || '(00) 0000-0000'}</p>
+        <p className="truncate max-w-[15ch] sm:max-w-[25ch]">{email || 'meuemail@email.com'}</p>
       </div>
     </div>
   )
