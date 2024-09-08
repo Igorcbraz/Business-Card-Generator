@@ -1,0 +1,1 @@
+export const freeTrial = 'https://app.rdstation.com.br/signup/'
