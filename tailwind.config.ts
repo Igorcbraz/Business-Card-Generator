@@ -13,6 +13,7 @@ const config: Config = {
         primary: {
           400: '#6C5AE0',
           500: '#4839A3',
+          800: '#D8D9FD',
           900: '#100C27'
         },
         highlight: {
@@ -51,15 +52,23 @@ const config: Config = {
         'body-sm': ['14px', { lineHeight: '150%' }],
 
         'caption': ['12px', { lineHeight: '150%' }],
-      }
+        'caption-xs': ['9px', { lineHeight: '150%' }],
+      },
+      boxShadow: {
+        'button-black': '0px 4px #000000',
+        'button-disabled': '0px 4px #97A1AC',
+      },
     },
   },
   plugins: [
     function ({ addUtilities }: PluginAPI) {
       addUtilities({
         '.input-default': {
-          '@apply w-full px-3 py-2 focus:outline-none focus:ring focus:ring-primary-400 transition-shadow duration-300 text-gray-700 placeholder-gray-700': {},
+          '@apply px-3 py-2 border bg-white focus:outline-none focus:ring focus:ring-primary-400 transition-shadow duration-300 text-gray-700 placeholder-gray-700': {},
         },
+        '.errror-message': {
+          '@apply text-gray-300 text-sm': {},
+        }
       })
     },
   ],
