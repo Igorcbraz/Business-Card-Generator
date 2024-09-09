@@ -10,9 +10,9 @@ export function Header () {
           alt="Logo Resultados Digitais"
           className="w-24 sm:w-32 md:w-36 lg:w-40 xl:w-48"
         />
-        <h1 className='text-gray-900 text-heading-xxs font-DarkerGrotesque font-bold sm:text-heading-xs'>
+        <h2 className='text-gray-900 text-heading-xxs font-DarkerGrotesque font-bold sm:text-heading-xs'>
           Gerador de Cartão de Visita
-        </h1>
+        </h2>
       </section>
     </header>
   )
